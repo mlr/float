@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+  <title>Float</title>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="jquery.float.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    $(function() {
+      $("#number").float({
+        precision: 2 // Limits how many numbers can be entered after the decimal (2 is default)
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <input type="text" name="number" id="number" />
+</body>
+</html>
