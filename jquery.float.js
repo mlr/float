@@ -2,7 +2,7 @@
 * Float
 * Makes input elements only allow float values
 * Ronnie Miller (me@ronniemlr.com)
-* http://ronniemlr.com/jquery/float/ (coming soon)
+* http://ronniemlr.com/jquery/float/
 */
 (function($) {
 $.fn.float = function(options) {
