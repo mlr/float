@@ -16,7 +16,7 @@ $.fn.float = function(options) {
       control_key = (event.metaKey || event.keyCode == 46 || event.keyCode == 190 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 37 || event.keyCode == 39);
       string      = $(this).val();
       decimals    = string.indexOf(".");
-  
+
       // Prevent multiple decimals
       if(event.keyCode == 190 && decimals >= 0) {
         event.preventDefault();
@@ -38,8 +38,8 @@ $.fn.float = function(options) {
       }
 
       if(!control_key) {
-        // Ensure that it is a number or stop the keypress
-        if(event.shiftKey || ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105))) {
+        // Ensure key isn't a minus at start        // Ensure that it is a number, but not shift+number
+        if(!(caret == 0 && event.keyCode == 189 || event.keyCode == 109) && (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105))) {
           event.preventDefault();
         }
       }
@@ -58,7 +58,7 @@ function getCaret(el) {
     var r = document.selection.createRange();
     if (r == null) {
       return 0;
-    } 
+    }
 
     var re = el.createTextRange(),
         rc = re.duplicate();
@@ -66,7 +66,7 @@ function getCaret(el) {
     rc.setEndPoint('EndToStart', re);
 
     return rc.text.length;
-  }  
+  }
   return 0;
 }
 
@@ -91,3 +91,4 @@ function getTextSelection(textComponent)
   }
   return selectedText;
 }
+
